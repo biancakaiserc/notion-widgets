@@ -1,0 +1,202 @@
+*, *:before, *:after {
+-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body {
+ overflow: hidden;
+ font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+ font-weight: 100;
+ color: rgba(255, 255, 255, 1);
+ margin: 0;
+ padding: 0;
+ background: none;
+ -webkit-touch-callout: none;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+}
+
+#calendar {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  width: auto;
+  margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  max-width: 100vh;
+  max-height: 100vh;
+}
+
+.header {
+  height: 16vmin;
+  width: auto;
+  background: #292929;
+  z-index: 100;
+  display: flex;
+  padding: 0 4vmin;
+  align-items: center;
+}
+
+.name-wrapper {
+  margin-right: 10px;
+}
+
+.month-name {
+  margin: 0;
+  font-size: 6vmin;
+  line-height: auto;
+  font-weight: 100;
+}
+
+.month-name.in {
+  -webkit-animation: fadeIn 1s ease-out;
+  -moz-animation: fadeIn 1s ease-out;
+  animation: fadeIn 1s ease-out;
+  opacity: 1;
+}
+
+.controller-prev, .controller-next {
+  display: flex;
+  cursor: pointer;
+  margin: 0;
+  font-size: 6vmin;
+  color: #05FCFE;
+}
+
+.controller-prev:hover, .controller-next:hover {
+  color: #FFF;
+  transition: all 0.5s ease;
+}
+
+.controller-prev {
+  margin: 0 4vmin;
+}
+
+.controller-next {
+  margin-right: auto;
+}
+
+.month-wrapper {
+  background: #222222;
+}
+
+.month.new, .month-name.in {
+  -webkit-animation: fadeIn .6s ease-in;
+  opacity: 1;
+}
+
+.month.out, .month-name.out {
+  -webkit-animation: fadeOut .3s ease-out;
+  -moz-animation: fadeOut .3s ease-out;
+  animation: fadeOut .3s ease-out;
+  opacity: 1;
+}
+
+.month.in.next {
+  -webkit-animation: moveFromLeftFadeMonth .6s ease-out;
+  -moz-animation: moveFromLeftFadeMonth .6s ease-out;
+  animation: moveFromLeftFadeMonth .6s ease-out;
+  opacity: 1;
+}
+
+.month.in.prev {
+  -webkit-animation: moveFromRightFadeMonth .6s ease-out;
+  -moz-animation: moveFromRightFadeMonth .6s ease-out;
+  animation: moveFromRightFadeMonth .6s ease-out;
+  opacity: 1;
+}
+
+.week {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1vmin 20px;
+}
+
+.week:first-of-type {
+/*   padding-top: 4vmin; */
+}
+
+.week:last-of-type {
+  padding-bottom: 4vmin;
+}
+
+.day {
+  color: #b7b7b7;
+  text-align: center;
+  display: flex;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+}
+
+.day.other {
+ color: rgba(255, 255, 255, .3);
+}
+
+.day.today {
+  color: #353535;
+  font-weight: bold;
+  background-color: #05FCFE;
+  border-radius: 100px;
+}
+
+.day-name {
+  text-transform: uppercase;
+  font-size: 4vmin;
+  margin: auto;
+  padding: 2vmin;
+  color: #FFF;
+}
+
+.day-number {
+  font-size: 5vmin;
+  letter-spacing: 1.5px;
+  margin: auto;
+  padding: 2vmin;
+}
+
+/* Animations are cool!  */
+@-webkit-keyframes moveFromLeftFadeMonth {
+  from { opacity: 0; -webkit-transform: translateX(30%) scale(.95); }
+}
+@-moz-keyframes moveFromLeftFadeMonth {
+  from { opacity: 0; -moz-transform: translateX(30%); }
+}
+@keyframes moveFromLeftFadeMonth {
+  from { opacity: 0; transform: translateX(30%); }
+}
+
+@-webkit-keyframes moveFromRightFadeMonth {
+  from { opacity: 0; -webkit-transform: translateX(-30%) scale(.95); }
+}
+@-moz-keyframes moveFromRightFadeMonth {
+  from { opacity: 0; -moz-transform: translateX(-30%); }
+}
+@keyframes moveFromRightFadeMonth {
+  from { opacity: 0; transform: translateX(-30%); }
+}
+
+@-webkit-keyframes fadeIn  {
+  from { opacity: 0; }
+}
+@-moz-keyframes fadeIn  {
+  from { opacity: 0; }
+}
+@keyframes fadeIn  {
+  from { opacity: 0; }
+}
+
+@-webkit-keyframes fadeOut  {
+  to { opacity: 0; }
+}
+@-moz-keyframes fadeOut  {
+  to { opacity: 0; }
+}
+@keyframes fadeOut  {
+  to { opacity: 0; }
+}
