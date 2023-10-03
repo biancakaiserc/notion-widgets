@@ -82,6 +82,7 @@ body {
 
 .month-wrapper {
   background: #222222;
+  padding: 6vmin;
 }
 
 .month.new, .month-name.in {
@@ -113,15 +114,7 @@ body {
 .week {
   display: flex;
   justify-content: space-evenly;
-  padding: 1vmin 20px;
-}
-
-.week:first-of-type {
-/*   padding-top: 4vmin; */
-}
-
-.week:last-of-type {
-  padding-bottom: 4vmin;
+  margin: 2vmin;
 }
 
 .day {
